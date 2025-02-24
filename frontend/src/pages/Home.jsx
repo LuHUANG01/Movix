@@ -48,6 +48,21 @@ function Home() {
         }
     };
 
+    const handleHomeClick = async () => {
+        setLoading(true);
+        setSearchQuery("");
+        try {
+            const popularMovies = await getPopularMovies();
+            setMovies(popularMovies);
+            setError(null);
+        } catch (err) {
+            console.log(err);
+            setError("Failed to load movies...");
+        } finally {
+            setLoading(false);
+        }
+    }; 
+
     return (
         <div className="home">
             <form onSubmit={handleSearch} className="search-form">
@@ -61,6 +76,7 @@ function Home() {
                 <button type="submit" className="search-button">
                     Search
                 </button>
+                
             </form>
 
                 {error && <div className="error-message">{error}</div>}
