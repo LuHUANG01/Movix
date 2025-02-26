@@ -1,56 +1,15 @@
 import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
 import { searchMovies, getPopularMovies } from "../services/api";
-import "../css/Home.css"
+import "../css/Home.css";
 
-function Home() {
+function Home({ setLoadPopularMovies }) {
     const [searchQuery, setSearchQuery] = useState("");
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const loadPopularMovies = async () => {
-            try {
-                const popularMovies = await getPopularMovies()
-                setMovies(popularMovies)
-            } catch (err) {
-                console.group(err)
-                setError("Failed to load movies...")
-            }
-            finally {
-                setLoading(false);
-            }
-        };
-
-        loadPopularMovies();
-    }, []);
-
-    const handleSearch = async (e) => {
-        e.preventDefault();
-        if (!searchQuery.trim()) {
-            return
-        }
-        if (loading) {
-            return 
-        }
-        
-        setLoading(true)
-        try{
-            const searchResults = await searchMovies(searchQuery)
-            setMovies(searchResults)
-            setError(null)
-        } catch (err) {
-            console.log(err)
-            setError("Failed to search movies...")
-        } finally {
-            setLoading(false)
-        }
-    };
-
-    const handleHomeClick = async () => {
-        setLoading(true);
-        setSearchQuery("");
+    const loadPopularMovies = async () => {
         try {
             const popularMovies = await getPopularMovies();
             setMovies(popularMovies);
@@ -61,10 +20,37 @@ function Home() {
         } finally {
             setLoading(false);
         }
-    }; 
+    };
+
+    useEffect(() => {
+        loadPopularMovies();
+        setLoadPopularMovies(() => loadPopularMovies); // Set the function
+    }, [setLoadPopularMovies]);
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        if (!searchQuery.trim()) {
+            return;
+        }
+        if (loading) {
+            return;
+        }
+        
+        setLoading(true);
+        try {
+            const searchResults = await searchMovies(searchQuery);
+            setMovies(searchResults);
+            setError(null);
+        } catch (err) {
+            console.log(err);
+            setError("Failed to search movies...");
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
-        <div className="home">
+        <div className="home-container">
             <form onSubmit={handleSearch} className="search-form">
                 <input
                     type="text"
@@ -76,14 +62,13 @@ function Home() {
                 <button type="submit" className="search-button">
                     Search
                 </button>
-                
             </form>
-
-                {error && <div className="error-message">{error}</div>}
+        
+            {error && <div className="error-message">{error}</div>}
             {loading ? (
                 <div className="loading">Loading...</div> 
             ) : (
-                <div className="movies-grid ">
+                <div className="movies-grid">
                     {movies.map((movie) => (
                         <MovieCard movie={movie} key={movie.id} />
                     ))}
@@ -92,4 +77,5 @@ function Home() {
         </div>
     );
 }
+
 export default Home;

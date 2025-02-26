@@ -5,7 +5,7 @@ const MovieContext = createContext()
 export const useMovieContext = () => useContext(MovieContext)
 
 export const MovieProvider = ({children}) => {
-    const [favorites, setFavorites] = useState([])
+    const [favorites, setFavorites] = useState([]) /* This initializes the favorites state to an empty array and provides a setFavorites function to update it. */
 
     useEffect(() => {
         const storedFavs = localStorage.getItem("favorites")
