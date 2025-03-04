@@ -54,13 +54,13 @@ function Home({ setLoadPopularMovies }) {
             <form onSubmit={handleSearch} className="search-form">
                 <input
                     type="text"
-                    placeholder="Search for movies..."
+                    placeholder="Search for movies... | Rapu kiriata..."
                     className="search-input"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <button type="submit" className="search-button">
-                    Search
+                    Search | Rapu
                 </button>
             </form>
         

@@ -8,8 +8,8 @@ function NavBar({ onHomeClick }) {
                 <Link to="/" onClick={onHomeClick}>Movix</Link>
             </div>
             <div className="navbar-links">
-                <Link to="/" className="nav-link" onClick={onHomeClick}>Home</Link>
-                <Link to="/favorites" className="nav-link">Favorites</Link>
+                <Link to="/" className="nav-link" onClick={onHomeClick}>Home | Kāinga</Link>
+                <Link to="/favorites" className="nav-link">Favorites | Ngā Mea Pai</Link>
             </div>
         </nav>
     );
