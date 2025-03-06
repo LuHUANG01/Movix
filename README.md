@@ -30,4 +30,4 @@ Detailed pages for each movie, displaying information such as title, overview, a
 
 ### Favorites Management 
 Functionality for users to add movies to their favorites list and manage that list (add, remove, view). 
-！[image](https://github.com/LuHUANG01/MovieSeek/blob/main/frontend/img/favourite.png)
+！[image](frontend/img/favourite.png)
