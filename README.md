@@ -22,12 +22,12 @@ MovieSeek is a movie search and favorites application built with React and Vite.
 ## Key Features
 ### Movie Search Feature 
 A search bar that allows users to enter keywords and find relevant movies from the TMDB database.  
-！[image](https://github.com/LuHUANG01/MovieSeek/blob/main/frontend/img/home.png)
+![image](./frontend/img/home.png)
 
 ### Movie Details Page 
 Detailed pages for each movie, displaying information such as title, overview, and release date.  
-！[image](https://github.com/LuHUANG01/MovieSeek/blob/main/frontend/img/info.png)
+![image](https://github.com/LuHUANG01/MovieSeek/blob/main/frontend/img/info.png)
 
 ### Favorites Management 
 Functionality for users to add movies to their favorites list and manage that list (add, remove, view).  
-！[img](https://raw.githubusercontent.com/LuHUANG01/MovieSeek/refs/heads/main/frontend/img/favourite.png?token=GHSAT0AAAAAAC72UKEFM7LPRJAQRKIKW5WGZ6I6KOQ)
+![img](./frontend/img/favourite.png)
