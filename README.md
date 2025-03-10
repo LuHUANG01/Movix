@@ -1,5 +1,5 @@
-# MovieSeek
-MovieSeek is a movie search and favorites application built with React and Vite. Users can search for movies, view movie details, and add movies to their favorites list.
+# Movix
+Movix is a movie search and favorites application built with React and Vite. Users can search for movies, view movie details, and add movies to their favorites list.
 ## Main Features
 **Movie Search:**  Users can search for movies by entering keywords.  
 **Popular Movies:** The app displays popular movies on startup.  
