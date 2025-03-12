@@ -40,4 +40,4 @@ Users can view all their favorited movies on this page, displayed in a grid or l
 Users can remove movies they are no longer interested in from their favorites list. 
 **Export Favorites List：** 
 Users can export their favorites list as a text file (e.g., .txt) for easy saving or sharing. 
-![img](./frontend/img/favourite.png)
+![img](./frontend/img/favorite.png)
