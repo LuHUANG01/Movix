@@ -20,14 +20,24 @@ Movix is a movie search and favorites application built with React and Vite. Use
 **services:** Contains services for API interactions.  
 
 ## Key Features
-### Movie Search Feature 
-A search bar that allows users to enter keywords and find relevant movies from the TMDB database.  
+### Home Page
+**Movie Search：** 
+Users can enter keywords (e.g., movie titles) in the search bar to find movies. The search results are displayed in a grid or list format. 
+**Popular Movies Display：** 
+The Home Page showcases some popular movies by default, allowing users to browse them without needing to search. 
+**Add to Favorites：** 
+On the movie details page, users can click the "Favorite" button to add the movie to their favorites list. 
 ![image](./frontend/img/home.png)
 
-### Movie Details Page 
-Detailed pages for each movie, displaying information such as title, overview, and release date.  
+**View Movie Details：** 
+Users can click on any movie card to view detailed information about the movie, including the title, overview, release date, poster, and more. 
 ![image](https://github.com/LuHUANG01/MovieSeek/blob/main/frontend/img/info.png)
 
-### Favorites Management 
-Functionality for users to add movies to their favorites list and manage that list (add, remove, view).  
+### Favorites Page
+**View Favorites List：** 
+Users can view all their favorited movies on this page, displayed in a grid or list format. 
+**Remove from Favorites：** 
+Users can remove movies they are no longer interested in from their favorites list. 
+**Export Favorites List：** 
+Users can export their favorites list as a text file (e.g., .txt) for easy saving or sharing. 
 ![img](./frontend/img/favourite.png)
